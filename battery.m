@@ -69,8 +69,6 @@ sol = pdepe(m,@pdex1pde,@pdex1ic,@pdex1bc,r,t);
 T = sol(:,:,1);
 
 %% Surface plot
-SOC = t.*C_rate/3600*100;
-
 pcolor(r.*1000,t./60,T)
 xlabel('Distance from center, r (mm)')
 ylabel('Time, t (min)')
@@ -80,6 +78,7 @@ print(filename,'-dpng')
 
 %% Animated plot of T(r,t)
 figure
+SOC = t.*C_rate/3600*100;
 y_limits = [29 ceil(max(T(:))+1)];
 for i = 1:length(T(:,1))
     plot(r.*1000,T(i,:));
