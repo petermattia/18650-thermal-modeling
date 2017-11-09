@@ -74,7 +74,7 @@ xlabel('Distance from center, r (mm)')
 ylabel('Time, t (min)')
 hcb = colorbar; title(hcb,'Temperature (^oC)')
 title([num2str(C_rate) 'C'])
-print(filename,'-dpng')
+print(filename,'-dsvg')
 
 %% Animated plot of T(r,t)
 figure
